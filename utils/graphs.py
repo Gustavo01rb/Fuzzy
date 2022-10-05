@@ -32,7 +32,7 @@ class Graph:
 
 
     @staticmethod
-    def inline_plot(data, range, path_save, title=False, fig_width = 21, fig_heigh = 12, label=False, active_legend=False,doted=999, subtitle=False, show=False,fill=False):
+    def inline_plot(data, path_save, range, multi_range = False, title=False, fig_width = 21, fig_heigh = 12, label=False, active_legend=False,doted=999, subtitle=False, show=False,fill=False,yticks = np.arange(0,1.01,0.2), legend_size = 20):
 
         plt.clf()
         fig, axs = plt.subplots(data.shape[0])
@@ -46,7 +46,7 @@ class Graph:
             for index_function, function in enumerate(graph):
                 if not fill:
                     axs[index_graph].plot(
-                        range, 
+                        range if not multi_range else multi_range[index_graph], 
                         function, 
                         '-' if index_function < doted else '--',
                         label = label[index_graph][index_function] if label else "" 
@@ -54,7 +54,7 @@ class Graph:
                     continue
                 if fill[index_graph][index_function]:
                     axs[index_graph].fill_between(
-                        range, 
+                        range if not multi_range else multi_range[index_graph], 
                         function,
                         '-' if index_function < doted else '--',
                         label = label[index_graph][index_function] if label else "",
@@ -63,18 +63,17 @@ class Graph:
                     )
                 else:
                     axs[index_graph].plot(
-                        range, 
+                        range if not multi_range else multi_range[index_graph], 
                         function, 
                         '-' if index_function < doted else '--',
                         label = label[index_graph][index_function] if label else "" 
                     )
-
+            axs[index_graph].set_yticks(yticks)
             if active_legend:
-                axs[index_graph].legend(loc='center left', bbox_to_anchor=(1, 0.5),prop={'size': 20})
+                axs[index_graph].legend(loc='center left', bbox_to_anchor=(1, 0.5),prop={'size': legend_size})
             if subtitle:
                 axs[index_graph].set_title(subtitle[index_graph], loc='left',fontsize=16, fontweight =200)
         
         plt.savefig(path_save)
         if show: plt.show()
         plt.clf()
-        
