@@ -9,7 +9,7 @@ from utils.graphs import Graph
 from fuzzy.operators import Union
 import skfuzzy as fuzz
 
-point_n = 100
+point_n = 200
 x = np.linspace(-10,  10, point_n, endpoint=True) # Definindo intervalo dos antecedentes
 y = np.linspace(  0,  10, point_n, endpoint=True) # Definindo intervalo dos consequentes
 
@@ -46,9 +46,9 @@ for active in range(y.shape[0]):
 
     single_out = np.array([Union.maximum(actv_cons)])
 
-    output.append(fuzz.defuzz(y, single_out, 'centroid'))
+    output.append(fuzz.defuzz(y, single_out, 'lom'))
 
-    if (active%120) == 0:
+    '''if (active%120) == 0:
     
         Graph.inline_plot(
             data=np.array([
@@ -74,10 +74,11 @@ for active in range(y.shape[0]):
                 [False,False,False,],
                 [False,False,False,],
                 [False,False,False,],
-                [False,False,False,True],]) 
+                [False,False,False,True],]) '''
 
-plt.title("Relação de entrada saída")
-plt.plot(y,y, label="input")
-plt.plot(y,output, label="output")
+plt.title("Relação de entrada saída",fontsize=22, fontweight ="bold")
+plt.plot(x,x,'--', label="input",linewidth='3')
+plt.plot(x,output, label="output", linewidth='3')
 plt.legend()
 plt.savefig("../images/mandani/defuzz.png")
+plt.show()
