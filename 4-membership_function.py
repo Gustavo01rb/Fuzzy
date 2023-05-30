@@ -1,7 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-sys.path.append('..')
 from fuzzy.membership_function import Membership_Function as MF
 from utils.graphs import Graph
 
@@ -53,4 +51,4 @@ Graph.format_multi_column_plot(
   column=2, 
   active_legend=True, 
   yticks=np.arange(-0.2,1.01,0.2), 
-  path_save="../images/membership_example.png")
+  path_save="images/membership_example.png")

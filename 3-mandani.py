@@ -1,9 +1,13 @@
-from cProfile import label
-from nis import cat
+'''
+Este código implementa o Método de Mandani para sistemas de controle fuzzy. 
+Ele define funções de pertinência para as variáveis de entrada e saída, bem 
+como regras de ativação para relacionar as entradas e saídas fuzzy. O código 
+calcula a ativação das regras, realiza a inferência fuzzy e aplica a 
+defuzzificação para obter o valor de saída final.
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-sys.path.append('..')
 from fuzzy.membership_function import Membership_Function as MF
 from utils.graphs import Graph
 from fuzzy.operators import Union
@@ -48,7 +52,7 @@ for active in range(y.shape[0]):
 
     output.append(fuzz.defuzz(y, single_out, 'lom'))
 
-    '''if (active%120) == 0:
+    if (active%120) == 0:
     
         Graph.inline_plot(
             data=np.array([
@@ -58,7 +62,7 @@ for active in range(y.shape[0]):
             np.concatenate((actv_cons, single_out),axis=0)]),
             range=x,
             multi_range=[x,y,x,y],
-            path_save=f"../images/mandani/100tests/teste{active}.png",
+            path_save=f"images/mandani/100tests/teste{active}.png",
             show=False,
             active_legend=True,
             legend_size=13,
@@ -74,11 +78,11 @@ for active in range(y.shape[0]):
                 [False,False,False,],
                 [False,False,False,],
                 [False,False,False,],
-                [False,False,False,True],]) '''
+                [False,False,False,True],]) 
 
 plt.title("Relação de entrada saída",fontsize=22, fontweight ="bold")
 plt.plot(x,x,'--', label="input",linewidth='3')
 plt.plot(x,output, label="output", linewidth='3')
 plt.legend()
-plt.savefig("../images/mandani/defuzz.png")
+plt.savefig("images/mandani/defuzz.png")
 plt.show()

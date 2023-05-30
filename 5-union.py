@@ -1,7 +1,12 @@
+'''
+Este código realiza testes com diferentes operadores de união 
+para funções de pertinência. Ele cria gráficos que mostram as 
+entradas, as saídas e a combinação das entradas e saídas para 
+cada tipo de operador de união. Os gráficos são salvos em arquivos de imagem.
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-sys.path.append('..')
 from fuzzy.membership_function import Membership_Function as MF
 from fuzzy.operators import Union
 from utils.graphs import Graph
@@ -20,7 +25,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/union_max.png",  
+  path_save="images/union_max.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['max'],
@@ -45,7 +50,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/union_prob.png",  
+  path_save="images/union_prob.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['prob_sum'],
@@ -70,7 +75,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/union_lim.png",  
+  path_save="images/union_lim.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['lim_sum'],
@@ -96,7 +101,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/union_dra.png",  
+  path_save="images/union_dra.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['dra_sum'],

@@ -1,7 +1,12 @@
+'''
+Esse código realiza testes com os complementos de Zadeh, Sugeno e Yager 
+para funções de pertinência. Ele cria gráficos que mostram as entradas, 
+as saídas e a combinação das entradas e saídas para cada tipo de complemento. 
+Os gráficos são salvos em arquivos de imagem.
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt 
-import sys
-sys.path.append('..')
 from fuzzy.membership_function import Membership_Function as MF
 from fuzzy.operators import Complement
 from utils.graphs import Graph
@@ -25,7 +30,7 @@ Graph.inline_plot(
   doted=3,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/complement_zadeh.png",  
+  path_save="images/complement_zadeh.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['Zadeh(Tri)', 'Zadeh(Tra)', 'Zadeh(Gaus)'],
@@ -51,7 +56,7 @@ Graph.inline_plot(
   doted=3,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/complement_sugeno.png",  
+  path_save="images/complement_sugeno.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['Sugeno(Tri,3)', 'Sugeno(Tra,4)', 'Sugeno(Gaus,5)'],
@@ -77,7 +82,7 @@ Graph.inline_plot(
   doted=3,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/complement_yager.png",  
+  path_save="images/complement_yager.png",  
   label=[
     ['Tri', 'Tra', 'Gaus'],
     ['Yager(Tri,3)', 'Yager(Tra,4)', 'Yager(Gaus,5)'],

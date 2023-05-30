@@ -1,7 +1,12 @@
+'''
+Esse código realiza testes com as operações de interseção mínima, 
+interseção de produtos, interseção de produto limitado e interseção 
+de produto drástico para funções de pertinência. Ele cria gráficos 
+que mostram as entradas, as saídas e a combinação das entradas e saídas 
+para cada tipo de interseção. Os gráficos são salvos em arquivos de imagem.
+'''
+
 import numpy as np
-import matplotlib.pyplot as plt
-import sys
-sys.path.append('..')
 from fuzzy.membership_function import Membership_Function as MF
 from fuzzy.operators import Intercession
 from utils.graphs import Graph
@@ -20,7 +25,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/intercession_min.png",
+  path_save="images/intercession_min.png",
   label=[
     ['Tri', 'Gaus'],
     ['min'],
@@ -45,7 +50,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/intercession_prod.png",
+  path_save="images/intercession_prod.png",
   label=[
     ['Tri', 'Gaus'],
     ['prod'],
@@ -70,7 +75,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/intercession_lim_prod.png",
+  path_save="images/intercession_lim_prod.png",
   label=[
     ['Tri', 'Gaus'],
     ['lim_prod'],
@@ -95,7 +100,7 @@ Graph.inline_plot(
   range=range,
   active_legend=True,
   subtitle=['Entradas', 'Saídas', 'Entradas X Saídas'],
-  path_save="../images/intercession_dra_prod.png",
+  path_save="images/intercession_dra_prod.png",
   show=True,  
   label=[
     ['Tri', 'Gaus'],
