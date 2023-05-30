@@ -170,3 +170,7 @@ Os operadores de interseção são usados na lógica fuzzy para representar a op
 ### Contribuição
 
 Contribuições para este repositório são bem-vindas. Se você encontrar um bug ou gostaria de adicionar uma nova funcionalidade, sinta-se à vontade para abrir uma issue ou um pull request.
+
+### Licença
+Este repositório é licenciado sob a [MIT License](/LICENSE). Sinta-se livre para utilizar o código aqui disponível conforme necessário.
+Espero que este repositório seja útil para sua compreensão e aplicação da lógica fuzzy. Se tiver alguma dúvida, não hesite em entrar em contato.
